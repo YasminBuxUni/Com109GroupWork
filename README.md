@@ -6,7 +6,7 @@ Johnny: contact, faq
 
 copy paste to top of every page 
 
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <title>TITLE</title>
