@@ -1,8 +1,0 @@
-Make logo
-Shop name
-Make favicon
-
-Pages: Homepage, mens, womens, contact
-
-Make default CSS file for header and footer
-Make default JavaScript for the header and footer
