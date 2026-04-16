@@ -6,7 +6,7 @@ Johnny: contact, faq
 
 copy paste to top of every page 
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
   <title>TITLE</title>
@@ -26,7 +26,7 @@ copy paste to top of every page
 </nav>
 
 <h1>LARGEST TITLE</h1>
-<p>FIRST PARAGRAPH</p>
+<p>FIRST PARAGRAPH</p> -->
 
 </body>
 </html>
