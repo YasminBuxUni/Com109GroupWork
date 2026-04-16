@@ -6,6 +6,8 @@ Johnny: contact, faq
 
 copy paste to top of every page 
 
+Cathedral Quarter Clinic
+
 <!-- <!DOCTYPE html>
 <html>
 <head>
