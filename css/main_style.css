@@ -57,7 +57,7 @@ p {
   background-color: #0056b3;
   color: white;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 25px;
   transition: background-color 0.3s;
   text-align: center;
 }
@@ -101,7 +101,27 @@ p {
   padding: 40px;
 }
 
+.description-text {
+  flex-direction: column;
+  text-align: center;
+  max-width: 600px;
+}
+
 #doctors-photo { 
+  width: 500px;
+  height: auto;
+  padding: 40px;
+  border-radius: 70px;
+}
+
+#booking-photo {
+  width: 500px;
+  height: auto;
+  padding: 40px;
+  border-radius: 70px;
+}
+
+#services-photo { 
   width: 500px;
   height: auto;
   padding: 40px;
