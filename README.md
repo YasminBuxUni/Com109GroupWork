@@ -6,12 +6,14 @@ Johnny: contact, faq
 
 copy paste to top of every page 
 
-<!DOCTYPE html>
+Cathedral Quarter Clinic
+
+<!-- <!DOCTYPE html>
 <html>
 <head>
   <title>TITLE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -26,7 +28,7 @@ copy paste to top of every page
 </nav>
 
 <h1>LARGEST TITLE</h1>
-<p>FIRST PARAGRAPH</p>
+<p>FIRST PARAGRAPH</p> -->
 
 </body>
 </html>
