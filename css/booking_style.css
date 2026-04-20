@@ -31,45 +31,9 @@ nav a:hover {
 }
 
 /* Page content */
-h1 {
-  font-weight: bold;
-  text-align: center;
-  margin-top: 40px;
-  color: #0056b3;
-}
-
 p {
   text-align: center;
   color: #000000;
-}
-
-.heading-container {
-  background-color: #a8c7e859;
-  padding: 2px 2px;
-  margin: 2px auto;
-}
-
-.button {
-  display: inline-block;
-  width: auto;
-  padding: 10px 20px;
-  margin: 20px  auto;
-  background-color: #0056b3;
-  color: white;
-  text-decoration: none;
-  border-radius: 25px;
-  transition: background-color 0.3s;
-  text-align: center;
-}
-
-.button:hover {
-  background-color: #00438a;
-  transform: scale(1.05);
-  transition: 0.4s;
-}
-
-.button-container {
-  text-align: center;
 }
 
 .container {
@@ -81,49 +45,8 @@ p {
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.description-container {
-  display: flex;
-  gap: 20px;
-  align-items: center; 
-  padding: 40px;
-}
-
-.description-text {
-  flex-direction: column;
-  text-align: center;
-  max-width: 600px;
-}
-
-.error {
-  color: red;
-  font-size: 12px;
-  display: block;
-  margin-top: 5px;
-}
-
 label {
   display: block;
   margin-top: 15px;
   font-weight: bold;
-}
-
-#doctors-photo { 
-  width: 500px;
-  height: auto;
-  padding: 40px;
-  border-radius: 70px;
-}
-
-#booking-photo {
-  width: 500px;
-  height: auto;
-  padding: 40px;
-  border-radius: 70px;
-}
-
-#services-photo { 
-  width: 500px;
-  height: auto;
-  padding: 40px;
-  border-radius: 70px;
 }

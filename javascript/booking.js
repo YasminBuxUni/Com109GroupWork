@@ -36,41 +36,59 @@ window.onload = function () { ///waits for the html file to fully load
     }
   }
 
-  generateTimeSlots();
-  disableBookedTimes(["09:30", "11:00", "14:15"]);
+  generateTimeSlots(); //Limitation: times are hardcoded into the function
+//probably wont matter cause they will not be changing their hours frequently
+  disableBookedTimes(["09:30", "11:00", "14:15"]); //Limitation: these apply every day
 
-  // ----------------------------
-  // PHONE INPUT (intl-tel-input)
-  // ----------------------------
+  //local storage
+  const nameInput = document.getElementById("name");
+  const doctorSelect = document.getElementById("doctor");
 
-  const phoneInput = document.querySelector("#phone");
+  //load saved values
+  nameInput.value = localStorage.getItem("name") || ""; // stuff to the right of
+  //|| are done if there is no "name"
+  //in this case it just sets it blank
+  doctorSelect.value = localStorage.getItem("doctor") || "";
 
-  const iti = window.intlTelInput(phoneInput, {
-    initialCountry: "gb",
-    separateDialCode: true,
-    preferredCountries: ["gb", "ie"],
-    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
+  //save when user types and selects
+  nameInput.addEventListener("input", function () {
+    localStorage.setItem("name", nameInput.value);
   });
 
-  const phoneError = document.getElementById("phoneError");
+  doctorSelect.addEventListener("change", function () {
+    localStorage.setItem("doctor", doctorSelect.value);
+  });
 
-  // Form submit
+  //phone input
+  const phoneInput = document.querySelector("#phone");
+
+  const fieldNumber = window.intlTelInput(phoneInput, {
+    initialCountry: "gb",
+    separateDialCode: true,
+    preferredCountries: ["gb", "ie"]
+  });
+
+  const notes = document.getElementById("notes");
+  const charCount = document.getElementById("charCount");
+
+  const maxLength = 200;
+
+  notes.addEventListener("input", function () {
+    const remaining = maxLength - notes.value.length;
+
+    charCount.textContent = remaining + " characters remaining";
+  });
+
+
+  //validation
   document.getElementById("bookingForm").addEventListener("submit", function (e) {
     e.preventDefault(); //stops default browser decisions so we can do all of this
 
-    // validate phone number using intl-tel-input
-    if (!iti.isValidNumber()) {
-      phoneError.textContent = "Please enter a valid phone number";
-      phoneInput.style.border = "1px solid red";
+    if (!fieldNumber.isValidNumber()) {
+      alert("Please enter a valid phone number");
       return;
     }
-
-    // clear error if valid
-    phoneError.textContent = "";
-    phoneInput.style.border = "";
-
     alert("Booked!");
-
     window.location.href = "index.html";
   });
 

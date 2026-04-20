@@ -7,7 +7,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css"> <!-- style sheet for phone number part --> 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script> <!-- country dropdown, allows formatting, isValidNumber() -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"></script> <!-- makes sure number is right for country, formats the number -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"></script> <!-- makes sure number is right for country -->
 
   <script src="javascript/booking.js"></script>
 
@@ -30,14 +30,13 @@
     <form id="bookingForm">
 
       <label for="name">Full Name*</label>
-      <input type="text" id="name" name="name" required><br>
+      <input type="text" id="name" name="name" required>
 
       <label for="email">Email</label>
-      <input type="email" id="email" name="email"><br>
+      <input type="email" id="email" name="email">
 
       <label for="phone">Phone Number*</label>
       <input type="tel" id="phone" name="phone" required>
-      <small id="phoneError" class="error"></small><br>
 
       <label for="doctor">Select Doctor*</label>
       <select id="doctor" name="doctor" required>
@@ -57,7 +56,8 @@
       </select>
 
       <label for="notes">Reason for appointment*</label>
-      <textarea id="notes" name="notes" rows="4" required></textarea>
+      <textarea id="notes" name="notes" rows="4" maxlength="200" required></textarea>
+      <small id="charCount">200 characters remaining</small><br><br>
 
       <button type="submit">Book Appointment</button>
 
