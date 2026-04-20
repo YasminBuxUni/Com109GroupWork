@@ -4,6 +4,13 @@
   <title>COM109 Site</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/booking_style.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css"> <!-- style sheet for phone number part --> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script> <!-- country dropdown, allows formatting, isValidNumber() -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"></script> <!-- makes sure number is right for country, formats the number -->
+
+  <script src="javascript/booking.js"></script>
+
 </head>
 
 <body>
@@ -18,34 +25,45 @@
   <a href="faq.html">FAQ</a>
 </nav>
 
-<div class="heading-container">
-  <h1>Your health is our priority</h1>
-  <p>Book an appointment with one of our top GPs today!</p>
+<div class="container">
+    <h2>Book a Doctor Appointment</h2>
+    <form id="bookingForm">
+
+      <label for="name">Full Name*</label>
+      <input type="text" id="name" name="name" required><br>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email"><br>
+
+      <label for="phone">Phone Number*</label>
+      <input type="tel" id="phone" name="phone" required>
+      <small id="phoneError" class="error"></small><br>
+
+      <label for="doctor">Select Doctor*</label>
+      <select id="doctor" name="doctor" required>
+        <option value="">-- Choose a Doctor --</option>
+        <option value="noPreference">No preference</option>
+        <option value="drSarah">Dr. Sarah Doherty - Dermatology</option>
+        <option value="drOmar">Dr. Omar Hashim - Oncology</option>
+        <option value="drNiamh">Dr. Niamh Cullen - General Practitioner</option>
+      </select><br>
+
+      <label for="date">Appointment Date*</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="time">Time*</label>
+      <select id="time" name="time" required>
+        <option value="">-- Select Time --</option>
+      </select>
+
+      <label for="notes">Reason for appointment*</label>
+      <textarea id="notes" name="notes" rows="4" required></textarea>
+
+      <button type="submit">Book Appointment</button>
+
+      <p>Fields marked with * are required</p>
+    </form>
 </div>
-
-<!-- Book now button --> 
-<div class="button-container">
-  <a href="booking.html" class="button">Book Now</a>
-</div>
-
-<!-- Cards of info --> 
-<div class="card-container">
-  <div class="card">
-    <h2>Book Online</h2>
-    <p>Easy online booking for GP appointments</p>
-  </div>
-
-  <div class="card">
-    <h2>Experienced GPs</h2>
-    <p>Our team of experienced general practitioners are here to help you</p>
-  </div>
-
-  <div class="card">
-    <h2>High Quality Care</h2>
-    <p>Providing excellent healthcare services</p>
-  </div>
-</div>
-
 
 </body>
 </html>
