@@ -141,3 +141,24 @@ textarea {
   text-align: center;
   padding-bottom: 30px;
 }
+
+#charCount {
+  text-align: left;
+  margin-top: 8px;
+  font-size: 15px;
+  color: #444;
+}
+
+#formMessage {
+  margin-top: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.error-message {
+  color: #c62828;
+}
+
+.success-message {
+  color: #2e7d32;
+}

@@ -43,18 +43,21 @@
   <div class="form-card">
     <h2>Send us a message</h2>
 
-    <form>
-      <label for="name">Full Name</label>
+    <form id="contactForm">
+      <label for="name">Full Name*</label>
       <input type="text" id="name" name="name" placeholder="Enter your full name">
 
-      <label for="email">Email Address</label>
+      <label for="email">Email Address*</label>
       <input type="email" id="email" name="email" placeholder="Enter your email address">
 
       <label for="phone">Phone Number</label>
       <input type="text" id="phone" name="phone" placeholder="Enter your phone number">
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="6" placeholder="Type your message here"></textarea>
+      <label for="message">Message*</label>
+      <textarea id="message" name="message" rows="6" maxlength="200" placeholder="Type your message here"></textarea>
+      <p id="charCount">200 characters remaining</p>
+
+      <p id="formMessage"></p>
 
       <button type="submit" class="button">Send Message</button>
     </form>
@@ -64,6 +67,67 @@
 <div class="button-container">
   <a href="booking.html" class="button">Book Now</a>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contactForm");
+  const nameInput = document.getElementById("name");
+  const emailInput = document.getElementById("email");
+  const phoneInput = document.getElementById("phone");
+  const messageInput = document.getElementById("message");
+  const charCount = document.getElementById("charCount");
+  const formMessage = document.getElementById("formMessage");
+
+  const maxLength = 200;
+
+  messageInput.addEventListener("input", function () {
+    const remaining = maxLength - messageInput.value.length;
+    charCount.textContent = remaining + " characters remaining";
+  });
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const phone = phoneInput.value.trim();
+    const message = messageInput.value.trim();
+
+    formMessage.textContent = "";
+    formMessage.className = "";
+
+    if (name === "" || email === "" || message === "") {
+      formMessage.textContent = "Please fill in all required fields.";
+      formMessage.classList.add("error-message");
+      return;
+    }
+
+    if (!email.includes("@") || !email.includes(".")) {
+      formMessage.textContent = "Please enter a valid email address.";
+      formMessage.classList.add("error-message");
+      return;
+    }
+
+    if (phone !== "" && !/^[0-9+\s()-]+$/.test(phone)) {
+      formMessage.textContent = "Please enter a valid phone number.";
+      formMessage.classList.add("error-message");
+      return;
+    }
+
+    if (message.length < 10) {
+      formMessage.textContent = "Your message must be at least 10 characters long.";
+      formMessage.classList.add("error-message");
+      return;
+    }
+
+    formMessage.textContent = "Your message has been sent successfully.";
+    formMessage.classList.add("success-message");
+
+    form.reset();
+    charCount.textContent = maxLength + " characters remaining";
+  });
+});
+</script>
 
 </body>
 </html>
