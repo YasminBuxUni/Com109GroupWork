@@ -31,99 +31,22 @@ nav a:hover {
 }
 
 /* Page content */
-h1 {
-  font-weight: bold;
-  text-align: center;
-  margin-top: 40px;
-  color: #0056b3;
-}
-
 p {
   text-align: center;
   color: #000000;
 }
 
-.heading-container {
-  background-color: #a8c7e859;
-  padding: 30px 20px;
-  margin: 20px auto;
-}
-
-.button {
-  display: inline-block;
-  width: auto;
-  padding: 10px 20px;
-  margin: 20px  auto;
-  background-color: #0056b3;
-  color: white;
-  text-decoration: none;
-  border-radius: 25px;
-  transition: background-color 0.3s;
-  text-align: center;
-}
-
-.button:hover {
-  background-color: #00438a;
-  transform: scale(1.05);
-  transition: 0.4s;
-}
-
-.button-container {
-  text-align: center;
-}
-
-.card-container {
-  display: flex;
-  gap: 20px;
-  justify-content: center; 
-}
-
-.card {
-  flex: 1;
-  text-align: center;
-  background-color: white;
-  margin: 20px;
-  padding: 20px;
-  max-width: 300px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  border-radius: 15px;
-}
-
-.card:hover {
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-  transition: 0.2s;
-}
-
-.description-container {
-  display: flex;
-  gap: 20px;
-  align-items: center; 
-  padding: 40px;
-}
-
-.description-text {
-  flex-direction: column;
-  text-align: center;
+.container {
   max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-#doctors-photo { 
-  width: 500px;
-  height: auto;
-  padding: 40px;
-  border-radius: 70px;
-}
-
-#booking-photo {
-  width: 500px;
-  height: auto;
-  padding: 40px;
-  border-radius: 70px;
-}
-
-#services-photo { 
-  width: 500px;
-  height: auto;
-  padding: 40px;
-  border-radius: 70px;
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
 }
