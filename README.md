@@ -1,5 +1,7 @@
 example : https://belfastprivategp.com/
 
+accessability: https://www.w3.org/WAI/standards-guidelines/wcag/
+
 Yas: Booking, about us
 Danny: main, services
 Johnny: contact, faq
