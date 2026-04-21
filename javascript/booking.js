@@ -26,10 +26,10 @@ window.onload = function () { ///waits for the html file to fully load
   }
 
   function disableBookedTimes(bookedTimes = []) {
-    const options = timeSelect.options;
+    const options = timeSelect.options; //gets all option from dropdown menu
 
     for (let i = 0; i < options.length; i++) {
-      if (bookedTimes.includes(options[i].value)) {
+      if (bookedTimes.includes(options[i].value)) { //goes 1 by 1 to find booked times
         options[i].disabled = true;
         options[i].textContent += " (Booked)";
       }
@@ -37,7 +37,7 @@ window.onload = function () { ///waits for the html file to fully load
   }
 
   generateTimeSlots(); //Limitation: times are hardcoded into the function
-//probably wont matter cause they will not be changing their hours frequently
+  //probably wont matter cause they will not be changing their hours frequently
   disableBookedTimes(["09:30", "11:00", "14:15"]); //Limitation: these apply every day
 
   //local storage
@@ -46,11 +46,12 @@ window.onload = function () { ///waits for the html file to fully load
 
   //load saved values
   nameInput.value = localStorage.getItem("name") || ""; // stuff to the right of
-  //|| are done if there is no "name"
+  //  || are done if there is no "name"
   //in this case it just sets it blank
   doctorSelect.value = localStorage.getItem("doctor") || "";
 
-  //save when user types and selects
+  //sets the field to be whatever is saved in local storage
+  //also overwrites if something new is typed
   nameInput.addEventListener("input", function () {
     localStorage.setItem("name", nameInput.value);
   });
@@ -59,7 +60,7 @@ window.onload = function () { ///waits for the html file to fully load
     localStorage.setItem("doctor", doctorSelect.value);
   });
 
-  //phone input
+  //phone number field with dropdown menu and flags
   const phoneInput = document.querySelector("#phone");
 
   const fieldNumber = window.intlTelInput(phoneInput, {
@@ -73,14 +74,16 @@ window.onload = function () { ///waits for the html file to fully load
 
   const maxLength = 200;
 
-  notes.addEventListener("input", function () {
+  function updateCharacterCount() { //unnested this cause it was too confusing looking
     const remaining = maxLength - notes.value.length;
+    charCount.textContent = remaining + " characters remaining"
+  }
 
-    charCount.textContent = remaining + " characters remaining";
-  });
+  notes.addEventListener("input", updateCharacterCount); 
 
 
-  //validation
+  //validation for phone number because its more complex
+  //other fields already validate themselves
   document.getElementById("bookingForm").addEventListener("submit", function (e) {
     e.preventDefault(); //stops default browser decisions so we can do all of this
 
@@ -88,7 +91,7 @@ window.onload = function () { ///waits for the html file to fully load
       alert("Please enter a valid phone number");
       return;
     }
-    alert("Booked!");
+    alert("Sucessfully booked! Sending you back to home");
     window.location.href = "index.html";
   });
 
